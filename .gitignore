@@ -1,0 +1,5 @@
+node_modules
+.DB_store
+.idea
+package-lock.json
+.vscode
