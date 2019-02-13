@@ -84,12 +84,12 @@ const questions = [
           {
               name: '基于Mpvue的微信小程序项目',
               value: 'mpvue'
-          },
-          new inquirer.Separator(' * 后端 * '),
-          {
-              name: '基于Egg的博客项目',
-              value: 'egg-blog'
           }
+          // new inquirer.Separator(' * 后端 * '),
+          // {
+          //     name: '基于Egg的博客项目',
+          //     value: 'egg-blog'
+          // }
       ]
   }
 ];
