@@ -77,17 +77,17 @@ const questions = [
       choices: [
           new inquirer.Separator(' * 前端项目 * '),
           {
-              name: '多页jquery程序+handlebars模板引擎',
-              value: 'jquery-multipage'
+              name: '基于Gulp的多页jQuery',
+              value: 'jquery-gulp'
           },
-          new inquirer.Separator(' * 微信小程序项目 * '),
+          new inquirer.Separator(' * 微信小程序 * '),
           {
-              name: 'mpvue最佳实践',
+              name: '基于Mpvue的微信小程序项目',
               value: 'mpvue'
           },
-          new inquirer.Separator(' * 后端项目 * '),
+          new inquirer.Separator(' * 后端 * '),
           {
-              name: '基于egg的博客项目',
+              name: '基于Egg的博客项目',
               value: 'egg-blog'
           }
       ]
@@ -102,16 +102,11 @@ inquirer.prompt(questions).then((answers)=>{
 })
 
 function downloadTemplate(params){
-    console.log(params);
     spinner.start('loading');
-    const downloadUrl = `github:Creabine/creabine-cli-template/${params.templateType}`;
-    // let isHasDir = fs.existsSync(path.resolve(dir));
-    // if(isHasDir){
-    //     spinner.fail('当前目录已存在!');
-    //     return false;
-    // }
+    const templateType = params.templateType;
+    const downloadUrl = `github:Creabine/Creabine-cli-templates#${templateType}`;
     // 开始下载模板文件
-    download('github:Creabine/LeetCode', projectPath, function(err){
+    download(downloadUrl, projectPath, function(err){
         if(err){
             spinner.fail(err);
         };
